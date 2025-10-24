@@ -141,7 +141,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4">
               Expert Notary Services for Your Most Important Transactions
             </h2>
             <p className="text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -165,7 +165,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-light mb-6 text-gray-900">Loan Document Signings</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-6 text-gray-900">
+                Loan Document Signings
+              </h2>
               <p className="text-gray-800 mb-8 leading-relaxed">
                 Expert notarization for mortgage refinances, purchases, and title company work. We ensure a smooth and
                 compliant signing process.
@@ -336,7 +338,7 @@ export default function HomePage() {
       <RevealSection as="section" direction="right" className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">
               Florida Apostille Services
             </h2>
             <p className="text-gray-700 max-w-3xl mx-auto">
@@ -448,7 +450,9 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4">Elegant Wedding Officiant Services</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4">
+              Elegant Wedding Officiant Services
+            </h2>
             <p className="text-white/90 max-w-2xl mx-auto">Serving Tampa Bay and Surrounding Areas</p>
           </div>
 
@@ -533,7 +537,9 @@ export default function HomePage() {
       <RevealSection as="section" direction="right" className="py-16 lg:py-24 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">What Our Clients Say</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">
+              What Our Clients Say
+            </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
@@ -564,7 +570,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-light mb-6 text-gray-900">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-6 text-gray-900">
                 Schedule Your Notary Appointment Today
               </h2>
               <p className="text-gray-800 mb-8 leading-relaxed">
@@ -607,7 +613,7 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-light mb-6">Our Founder</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-6">Our Founder</h2>
               <p className="text-white/90 mb-6 leading-relaxed text-lg">
                 Jill Munoz brings over 20 years of experience in notary services and real estate to West Coast Notaries.
                 Her dedication to professionalism and client satisfaction has made her one of the most trusted notaries
@@ -643,7 +649,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4 text-white">Service Areas</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4 text-white">Service Areas</h2>
             <p className="text-white/90 max-w-2xl mx-auto">
               We provide mobile notary services throughout all 67 Florida counties, including:
             </p>
@@ -675,7 +681,7 @@ export default function HomePage() {
       <RevealSection as="section" direction="right" className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4 text-gray-900">
               Certified & Trusted Professional
             </h2>
             <p className="text-gray-700 max-w-3xl mx-auto">

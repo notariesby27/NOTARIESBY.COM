@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import Image from "next/image"
 
 export default function ContactPage() {
   return (
@@ -9,14 +10,9 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[300px] flex items-center justify-center bg-muted mt-16 lg:mt-20">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url(/placeholder.svg?height=300&width=1920&query=contact+us+professional+office)",
-            filter: "brightness(0.4)",
-          }}
-        />
+      <section className="relative h-[300px] flex items-center justify-center bg-muted mt-16 lg:mt-20 overflow-hidden">
+        <Image src="/images/contact-banner.jpg" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-4 text-balance">Contact Us</h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
