@@ -196,7 +196,9 @@
 
 @theme inline {
   /* Typography */
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Updated font-sans to use Inter as primary font for professional logo */
+  --font-sans: var(--font-inter, "Inter"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", Consolas, "SFMono-Regular", Menlo, Monaco, monospace;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 

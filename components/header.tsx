@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
@@ -13,16 +12,13 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#2C3036]/90 backdrop-blur-md text-white border-b border-white/10">
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/notariesby-logo-white.png"
-              alt="NotariesBy"
-              width={200}
-              height={75}
-              className="h-10 lg:h-12 w-auto"
-              priority
-            />
+          <Link href="/" className="flex items-center gap-1.5 group">
+            <span className="text-2xl lg:text-3xl font-bold tracking-tight text-white transition-opacity duration-200 group-hover:opacity-80">
+              Notaries
+            </span>
+            <span className="text-2xl lg:text-3xl font-light tracking-wide text-[#4C5870] transition-all duration-200 group-hover:text-[#5C6880]">
+              By
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

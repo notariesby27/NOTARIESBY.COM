@@ -14,24 +14,53 @@ import ProfessionalCredentials from "@/components/professional-credentials"
 export default function HomePage() {
   const testimonials = [
     {
-      name: "Pat",
-      text: "We are very pleased with the very timely and excellent service we received. Jill is very knowledgeable and was able to advise us as to exactly what we needed to do to execute our Estate Trust Documents. Everything was done perfectly. We will use her company again and highly recommend her.",
+      name: "Stephen Boerner",
+      text: "Jill Munoz got me out of a jam faster than I found myself in one. When I was in a pinch, unsure of what to do, Jill took the call, asked all the right questions, and calmly guided our partnership.",
       rating: 5,
+      profile: "Local Guide · 15 reviews",
+      date: "Recent",
     },
     {
-      name: "Paul D",
-      text: "Jill was professional, prompt, and made the entire notarization process seamless. Highly recommend her services!",
+      name: "Amanda Perez",
+      text: "Jill is an excellent officiant, she is sincere and well spoken. It is enjoyable to listen and watch her perform ceremonies.",
       rating: 5,
+      profile: "12 reviews · 1 photo",
+      date: "4 months ago",
+    },
+    {
+      name: "Denise Dililo",
+      text: "West Coast Notaries LLC. Great company! Jill handled all my Notary paper work in a professional and pleasant manner. She helped us navigate this signing process with patience and much knowledge. I definitely will call this company for all my Notary needs.",
+      rating: 5,
+      profile: "Local Guide · 44 reviews",
+      date: "5 months ago",
     },
     {
       name: "Barbara Domingues",
-      text: "Excellent service! Jill came to our home and handled everything efficiently. Very knowledgeable and friendly.",
+      text: "Professional and fast service. I felt very comfortable having Jill help me.",
       rating: 5,
+      profile: "6 reviews",
+      date: "2 years ago",
     },
     {
       name: "John Roman",
-      text: "Outstanding notary service. Jill is extremely professional and made the process easy to understand. Will definitely use again!",
+      text: "Super helpful, professional, and knowledgeable notary. Came to our home, made us feel very comfortable to complete one of the most important transactions of our lives. She spent a lot of time and extra hours with us to help understand everything.",
       rating: 5,
+      profile: "10 reviews · 6 photos",
+      date: "2 years ago",
+    },
+    {
+      name: "Pat",
+      text: "We are very pleased with the very timely and excellent service we received. Jill is very knowledgeable and was able to advise us as to exactly what we needed to do to execute our Estate Trust Documents. Everything was done perfectly. We will use her company again and highly recommend her.",
+      rating: 5,
+      profile: "1 review",
+      date: "2 years ago",
+    },
+    {
+      name: "Paul D",
+      text: "They were on time and very professional. Would use again.",
+      rating: 5,
+      profile: "Local Guide · 20 reviews · 1 photo",
+      date: "2 years ago",
     },
   ]
 
@@ -53,8 +82,8 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center text-black">
           <div className="flex flex-col items-center mb-4 md:mb-6">
-            <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 relative mb-2 md:mb-3">
-              <Image src="/images/florida-icon.png" alt="Florida" fill className="object-contain" />
+            <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 relative mb-2 md:mb-3">
+              <Image src="/images/florida-state-icon.png" alt="Florida" fill className="object-contain" />
             </div>
             <p className="text-sm md:text-base lg:text-lg text-black/70 italic font-medium">
               Proudly Serving All 67 Florida Counties
@@ -542,22 +571,29 @@ export default function HomePage() {
             </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-6 h-6 fill-[#4C5870] text-[#4C5870]" />
               ))}
             </div>
-            <p className="text-gray-700">5.0 from 4 Google Reviews</p>
+            <p className="text-gray-700">5.0 from 7 Google Reviews</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 shadow-sm">
-                <div className="flex items-center gap-1 mb-4">
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 fill-[#4C5870] text-[#4C5870]" />
                   ))}
                 </div>
-                <p className="text-gray-800 italic mb-4 leading-relaxed text-lg">{testimonial.text}</p>
-                <p className="font-semibold">— {testimonial.name}</p>
+                <p className="text-gray-800 mb-4 leading-relaxed">{testimonial.text}</p>
+                <div className="border-t border-gray-100 pt-3">
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.profile}</p>
+                  <p className="text-xs text-gray-500 mt-1">{testimonial.date}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -578,7 +614,7 @@ export default function HomePage() {
                 professional, reliable service.
               </p>
               <Link href="/contact">
-                <Button size="lg" className="bg-[#F59E0B] hover:bg-[#D97706] text-white">
+                <Button size="lg" className="bg-[#4C5870] hover:bg-[#5C6880] text-white">
                   Book Now
                 </Button>
               </Link>
@@ -621,10 +657,10 @@ export default function HomePage() {
               </p>
               <div className="flex items-center gap-1 mb-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-5 h-5 fill-[#4C5870] text-[#4C5870]" />
                 ))}
               </div>
-              <p className="text-[#A9A9A9] text-sm">5.0 from 4 Google Reviews</p>
+              <p className="text-[#A9A9A9] text-sm">5.0 from 7 Google Reviews</p>
             </div>
             <div className="flex justify-center lg:justify-end">
               <div className="w-72 h-72 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">

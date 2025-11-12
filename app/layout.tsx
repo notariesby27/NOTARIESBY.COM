@@ -5,12 +5,13 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
-import { Noto_Sans as V0_Font_Noto_Sans } from "next/font/google"
+import { Inter } from "next/font/google"
 
 // Initialize fonts
-const _notoSans = V0_Font_Noto_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

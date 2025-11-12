@@ -31,7 +31,7 @@ export default function AboutPage() {
   ]
 
   const stats = [
-    { number: "15+", label: "Years Experience" },
+    { number: "20+", label: "Years Experience" },
     { number: "10,000+", label: "Documents Notarized" },
     { number: "5,000+", label: "Satisfied Clients" },
     { number: "24/7", label: "Emergency Service" },
@@ -41,7 +41,7 @@ export default function AboutPage() {
     {
       name: "Jill Munoz",
       title: "Founder & Lead Notary",
-      bio: "With over 15 years of experience in the notary industry, Jill founded NotariesBy to provide exceptional mobile notary services throughout Florida. She specializes in real estate transactions and estate planning documents, bringing professionalism and reliability to every appointment.",
+      bio: "With over 20 years of experience in the notary industry, Jill founded NotariesBy to provide exceptional mobile notary services throughout Florida. She specializes in real estate transactions and estate planning documents, bringing professionalism and reliability to every appointment.",
       image: "/images/team/jill33.png",
     },
     {
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   notary practice serving thousands of clients across the region.
                 </p>
                 <p>
-                  Our founder, with over 15 years of experience in legal document services, recognized the need for a
+                  Our founder, with over 20 years of experience in legal document services, recognized the need for a
                   notary service that combines expertise with exceptional customer care. Today, we continue that
                   tradition, serving individuals, businesses, and legal professionals with the same dedication to
                   excellence.

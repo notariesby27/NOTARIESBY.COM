@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 dark:bg-destructive/60",
   {
     variants: {
       variant: {
@@ -17,7 +17,7 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        cta: "bg-[#F59E0B] text-white hover:bg-[#D97706] shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 font-semibold",
+        cta: "bg-[#4C5870] text-white hover:bg-[#5C6880] shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 font-semibold",
         dark: "bg-[#2C3036] text-white hover:bg-[#4C5870] shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 font-semibold",
         light:
           "bg-white text-[#2C3036] border-2 border-[#2C3036] hover:bg-gray-50 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 font-semibold",

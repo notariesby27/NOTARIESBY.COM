@@ -48,7 +48,7 @@ export default function ServicesPage() {
     {
       title: "Apostille Services",
       description: "International document authentication",
-      price: "$250 per document",
+      price: null,
       features: [
         "Birth certificates",
         "Death certificates",
@@ -56,6 +56,7 @@ export default function ServicesPage() {
         "Divorce certificates",
         "State background checks",
         "Document translations",
+        "Customized document fees applied to each specific client need",
       ],
       showImage: true,
     },

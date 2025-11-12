@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 export function ImageCarousel() {
   const images = [
     { src: "/images/carousel/signature-1.jpg", alt: "Professional signature" },
@@ -20,24 +22,28 @@ export function ImageCarousel() {
         {images.map((image, index) => (
           <div
             key={`first-${index}`}
-            className="carousel-item flex-shrink-0 w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48 rounded-lg overflow-hidden"
+            className="carousel-item flex-shrink-0 w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48 rounded-lg overflow-hidden relative"
           >
-            <img
+            <Image
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
-              className="w-full h-full object-cover transition-all duration-500"
+              fill
+              className="object-cover transition-all duration-500"
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
             />
           </div>
         ))}
         {images.map((image, index) => (
           <div
             key={`second-${index}`}
-            className="carousel-item flex-shrink-0 w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48 rounded-lg overflow-hidden"
+            className="carousel-item flex-shrink-0 w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48 rounded-lg overflow-hidden relative"
           >
-            <img
+            <Image
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
-              className="w-full h-full object-cover transition-all duration-500"
+              fill
+              className="object-cover transition-all duration-500"
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
             />
           </div>
         ))}
@@ -49,7 +55,7 @@ export function ImageCarousel() {
           100% { transform: translateX(-50%); }
         }
         .carousel-track {
-          animation: scroll 80s linear infinite; /* was 40s; doubled for 50% speed */
+          animation: scroll 80s linear infinite;
           width: fit-content;
         }
         .carousel-track:hover {
