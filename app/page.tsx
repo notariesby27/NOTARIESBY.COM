@@ -400,12 +400,12 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3 text-gray-900">Documents We Authenticate:</h4>
-                <p className="text-gray-800 mb-4">
+                <h4 className="font-semibold mb-3 text-gray-900 pl-16">Documents We Authenticate:</h4>
+                <p className="text-gray-800 mb-4 pl-16">
                   Common State issued documents include Birth Certificates, Death Certificates, Marriage Certificates,
                   Divorce Certificates, Translations, State background Checks, plus more.
                 </p>
-                <p className="text-gray-800">
+                <p className="text-gray-800 pl-16">
                   We offer the apostille service to help expedite and simplify the process for individuals that require
                   a Florida Apostille.
                 </p>
