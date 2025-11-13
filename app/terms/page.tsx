@@ -15,18 +15,26 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Agreement to Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
-                By accessing or using NotaryPro's services, you agree to be bound by these Terms of Service and all
-                applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from
-                using our services.
+                By accessing or using the services provided by West Coast Notaries, LLC, doing business as NotariesBy
+                ("NotariesBy," "we," "our," or "us"), you agree to be bound by these Terms of Service and all applicable
+                laws and regulations. If you do not agree with any of these terms, you are prohibited from using our
+                services.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mt-4 text-sm italic">
+                NotariesBy is a fictitious name duly registered under West Coast Notaries, LLC. Upon approval and
+                registration of the fictitious name, the business is authorized to conduct business, market, and operate
+                under the name NotariesBy in accordance with all state and local fictitious name registration
+                requirements and business regulations.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">Services Description</h2>
               <p className="text-muted-foreground leading-relaxed">
-                NotaryPro provides professional notary public services, including but not limited to document
-                notarization, mobile notary services, apostille services, and real estate closing services. All services
-                are performed in accordance with state laws and regulations governing notarial acts.
+                West Coast Notaries, LLC d/b/a NotariesBy provides professional notary public services, including but
+                not limited to document notarization, mobile notary services, apostille services, and real estate
+                closing services. All services are performed in accordance with state laws and regulations governing
+                notarial acts.
               </p>
             </section>
 
@@ -78,9 +86,9 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Limitation of Liability</h2>
               <p className="text-muted-foreground leading-relaxed">
-                NotaryPro's liability is limited to the amount paid for the specific service in question. We are not
-                responsible for the legal effect or validity of any document notarized. We do not provide legal advice
-                and recommend consulting with an attorney for legal questions.
+                West Coast Notaries, LLC d/b/a NotariesBy's liability is limited to the amount paid for the specific
+                service in question. We are not responsible for the legal effect or validity of any document notarized.
+                We do not provide legal advice and recommend consulting with an attorney for legal questions.
               </p>
             </section>
 
@@ -95,8 +103,8 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Intellectual Property</h2>
               <p className="text-muted-foreground leading-relaxed">
-                All content on this website, including text, graphics, logos, and images, is the property of NotaryPro
-                and protected by copyright laws. Unauthorized use is prohibited.
+                All content on this website, including text, graphics, logos, and images, is the property of West Coast
+                Notaries, LLC d/b/a NotariesBy and protected by copyright laws. Unauthorized use is prohibited.
               </p>
             </section>
 
@@ -122,11 +130,10 @@ export default function TermsPage() {
                 For questions about these Terms of Service, please contact us at:
               </p>
               <div className="mt-4 text-muted-foreground">
-                <p>NotaryPro</p>
-                <p>123 Main Street, Suite 100</p>
-                <p>Your City, ST 12345</p>
-                <p>Email: info@notarypro.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p className="font-semibold">West Coast Notaries, LLC d/b/a NotariesBy</p>
+                <p>Tampa Bay Area, FL</p>
+                <p>Email: info@notariesby.com</p>
+                <p>Phone: (727) 710-5455</p>
               </div>
             </section>
           </div>

@@ -100,7 +100,14 @@ export function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/60">© {new Date().getFullYear()} NotariesBy. All rights reserved.</p>
+            <div className="text-center md:text-left">
+              <p className="text-sm text-white/60">
+                © {new Date().getFullYear()} West Coast Notaries, LLC d/b/a NotariesBy. All rights reserved.
+              </p>
+              <p className="text-xs text-white/50 mt-1">
+                NotariesBy is a fictitious name registered under West Coast Notaries, LLC
+              </p>
+            </div>
             <div className="flex gap-6">
               <Link href="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">
                 Privacy Policy

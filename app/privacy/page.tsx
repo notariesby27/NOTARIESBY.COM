@@ -15,9 +15,14 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                NotaryPro ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
-                how we collect, use, disclose, and safeguard your information when you visit our website or use our
-                notary services.
+                West Coast Notaries, LLC, doing business as NotariesBy ("we," "our," or "us") is committed to protecting
+                your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information
+                when you visit our website or use our notary services.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mt-4 text-sm italic">
+                NotariesBy is a fictitious name registered under West Coast Notaries, LLC. Upon approval of the
+                fictitious name registration, the business operates and markets under the name NotariesBy in full
+                compliance with all applicable state and local regulations.
               </p>
             </section>
 
@@ -97,11 +102,10 @@ export default function PrivacyPage() {
                 If you have questions about this Privacy Policy or our privacy practices, please contact us at:
               </p>
               <div className="mt-4 text-muted-foreground">
-                <p>NotaryPro</p>
-                <p>123 Main Street, Suite 100</p>
-                <p>Your City, ST 12345</p>
-                <p>Email: privacy@notarypro.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p className="font-semibold">West Coast Notaries, LLC d/b/a NotariesBy</p>
+                <p>Tampa Bay Area, FL</p>
+                <p>Email: info@notariesby.com</p>
+                <p>Phone: (727) 710-5455</p>
               </div>
             </section>
           </div>
