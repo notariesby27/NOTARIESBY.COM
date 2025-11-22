@@ -10,7 +10,6 @@ export default function ContactPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative h-[300px] flex items-center justify-center bg-muted mt-16 lg:mt-20 overflow-hidden">
         <Image src="/images/contact-banner.jpg" alt="" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
@@ -22,11 +21,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
             <div>
               <h2 className="text-3xl lg:text-4xl font-serif font-light mb-6">Get In Touch</h2>
               <p className="text-gray-700 mb-8 leading-relaxed">
@@ -82,17 +79,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 h-[300px] bg-muted border border-border">
-                <img
-                  src="/placeholder.svg?height=300&width=600"
-                  alt="Office location map"
-                  className="w-full h-full object-cover"
-                />
+              <div className="mt-8 h-[300px] bg-muted border border-border overflow-hidden flex items-center justify-center">
+                <p className="text-gray-500 text-sm">Map image will be added here</p>
               </div>
             </div>
 
-            {/* Contact Form */}
             <div>
               <div className="bg-card border border-border p-6 lg:p-8">
                 <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
@@ -103,7 +94,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Emergency Service Banner */}
       <section className="py-12 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h3 className="text-2xl font-semibold mb-2">Need Emergency Notary Service?</h3>

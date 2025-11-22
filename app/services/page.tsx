@@ -18,7 +18,6 @@ export default function ServicesPage() {
 
       {/* Hero Component */}
       <Hero
-        eyebrow="Services"
         title="Professional Notary Services"
         subtitle="Trusted & Reliable — Mobile service across all 67 Florida counties. Book in minutes."
         ctaPrimary={{ href: "/schedule", label: "Book Now" }}
@@ -26,7 +25,7 @@ export default function ServicesPage() {
       />
 
       {/* Service Tabs Navigation */}
-      <section className="bg-white border-b border-gray-200">
+      <section className="bg-white border-b border-gray-200 mt-8 md:mt-12 lg:mt-16">
         <div className="container mx-auto px-4 lg:px-8">
           <Tabs defaultValue="all" className="w-full">
             <TabsList className="w-full justify-start h-auto p-0 bg-transparent border-b-0 rounded-none gap-0">
@@ -72,6 +71,12 @@ export default function ServicesPage() {
               >
                 Apostille
               </TabsTrigger>
+              <TabsTrigger
+                value="wedding"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent px-6 py-4"
+              >
+                Wedding Officiant
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="all" className="mt-0">
@@ -94,6 +99,9 @@ export default function ServicesPage() {
             </TabsContent>
             <TabsContent value="apostille" className="mt-0">
               <ServicesGrid filter="apostille" />
+            </TabsContent>
+            <TabsContent value="wedding" className="mt-0">
+              <ServicesGrid filter="wedding" />
             </TabsContent>
           </Tabs>
         </div>
@@ -283,6 +291,7 @@ function ServicesGrid({ filter }: { filter?: string }) {
       category: "notary",
       title: "Document Services",
       description: "Professional notarization and apostille services",
+      icon: FileText,
       features: [
         "General document notarization",
         "Mobile notary services covering all 67 Florida counties",
@@ -291,22 +300,64 @@ function ServicesGrid({ filter }: { filter?: string }) {
         "LegalZoom document notarization",
         "Apostille document authentication for international use",
       ],
+      detailedServices: [
+        {
+          name: "General Document Notarization",
+          description: "Professional notarization of legal documents, contracts, affidavits, and personal papers with proper identification verification and record keeping."
+        },
+        {
+          name: "Mobile Notary Services",
+          description: "On-site notarization services available throughout all 67 Florida counties for your convenience at home, office, or any location."
+        },
+        {
+          name: "Witness Services",
+          description: "Qualified witnesses provided when required by law for document execution and notarization."
+        },
+        {
+          name: "Extended Hours Service",
+          description: "After-hours and weekend notary services available with convenience fee for urgent document needs."
+        },
+        {
+          name: "Apostille Services",
+          description: "Complete apostille processing through the US State Department for international document authentication and legalization."
+        },
+      ],
     },
     {
       category: "real-estate",
       title: "Real Estate Services",
       description: "Expert notarization for real estate transactions",
+      icon: Home,
       features: [
         "Real estate document notarization and preparation",
         "Seller documents",
         "New home purchase documents",
         "Loan signing agent services (NNA and LSS Certified)",
       ],
+      detailedServices: [
+        {
+          name: "Purchase Agreements",
+          description: "Complete notarization of home purchase contracts, ensuring all signatures and documents meet legal requirements for real estate transactions."
+        },
+        {
+          name: "Refinancing Documents",
+          description: "Professional handling of mortgage refinancing paperwork with attention to detail and timely completion for smooth closing processes."
+        },
+        {
+          name: "Seller Document Packages",
+          description: "Comprehensive notarization of all seller-required documents including deeds, affidavits, and disclosure forms."
+        },
+        {
+          name: "Closing Services",
+          description: "Full-service loan signing agent certified by NNA and LSS, providing complete closing services for buyers, sellers, and lenders."
+        },
+      ],
     },
     {
       category: "estate-planning",
       title: "Estate Planning",
       description: "Secure your legacy with proper documentation",
+      icon: ScrollText,
       features: [
         "Last Will and Testament",
         "Living Will/Advance Healthcare Directive",
@@ -314,11 +365,30 @@ function ServicesGrid({ filter }: { filter?: string }) {
         "Full estate planning packages",
         "Testamentos, Directivas, Carta de Poder (Spanish services)",
       ],
+      detailedServices: [
+        {
+          name: "Last Will and Testament",
+          description: "Comprehensive will preparation and notarization to ensure your assets are distributed according to your wishes with proper legal documentation."
+        },
+        {
+          name: "Healthcare Directives",
+          description: "Living wills and advance healthcare directives that document your medical care preferences and end-of-life decisions."
+        },
+        {
+          name: "Power of Attorney Documents",
+          description: "Durable and limited power of attorney for financial, legal, and healthcare decisions, allowing trusted individuals to act on your behalf."
+        },
+        {
+          name: "Spanish Estate Services",
+          description: "Complete estate planning services in Spanish including Testamentos, Directivas, and Carta de Poder for Spanish-speaking clients."
+        },
+      ],
     },
     {
       category: "apostille",
       title: "Apostille Services",
       description: "International document authentication through the US State Department",
+      icon: Globe,
       customPricing: "Custom pricing based on document requirements",
       features: [
         "US State Department apostille processing",
@@ -326,32 +396,105 @@ function ServicesGrid({ filter }: { filter?: string }) {
         "Document shipping to over 200 countries",
         "Expedited processing available",
       ],
-      detailsFeatures: [
-        "Birth certificates",
-        "Marriage licenses and divorce decrees",
-        "Out-of-state vehicle registration",
-        "Dealer verification",
-        "Trailer, RV, and motorcycle documentation",
+      detailedServices: [
+        {
+          name: "Birth Certificate Apostilles",
+          description: "Authentication of birth certificates for dual citizenship applications, overseas employment, international adoptions, and immigration processes."
+        },
+        {
+          name: "Marriage License Apostilles",
+          description: "International recognition of marriage licenses for legal proceedings abroad, immigration applications, and establishing marital status overseas."
+        },
+        {
+          name: "Educational Document Apostilles",
+          description: "Apostille services for diplomas, transcripts, and degrees for international study programs, overseas employment, and professional licensing."
+        },
+        {
+          name: "Business Document Apostilles",
+          description: "Authentication of corporate documents, articles of incorporation, certificates of good standing, and business licenses for international operations."
+        },
       ],
     },
     {
       category: "vehicle",
       title: "Vehicle Documentation",
       description: "Vehicle-related verification and documentation",
+      icon: Car,
       features: [
         "VIN verification",
         "Odometer verification",
         "Out-of-state vehicle registration assistance",
         "Trailer, RV, and motorcycle documentation",
       ],
+      detailedServices: [
+        {
+          name: "VIN Verification Services",
+          description: "Official vehicle identification number verification for title transfers, registration, and legal documentation requirements."
+        },
+        {
+          name: "Odometer Certification",
+          description: "Legal odometer reading verification and certification for vehicle sales, title transfers, and state registration compliance."
+        },
+        {
+          name: "Registration Assistance",
+          description: "Complete assistance with out-of-state vehicle registration including all required documentation, verification, and notarization services."
+        },
+      ],
     },
     {
       category: "business",
       title: "Business & Employment",
       description: "Services for businesses and employers",
+      icon: Briefcase,
       features: [
         "I-9 Form verification (Employment Eligibility Verification)",
         "Authorized representative services for remote worker verification",
+      ],
+      detailedServices: [
+        {
+          name: "I-9 Employment Verification",
+          description: "Complete I-9 form verification services ensuring federal compliance with employment eligibility requirements and proper documentation for new hires."
+        },
+        {
+          name: "Remote Employee Verification",
+          description: "Authorized representative services for verifying identity and employment documents for remote employees, ensuring compliance across all locations."
+        },
+      ],
+    },
+    {
+      category: "wedding",
+      title: "Wedding Officiant",
+      description: "Personalized wedding ceremonies for your special day",
+      icon: Heart,
+      features: [
+        "Personalized wedding ceremonies",
+        "Civil and religious ceremonies",
+        "Vow renewal services",
+        "Same-day ceremony availability",
+        "Custom ceremony scripts",
+        "Bilingual ceremony options (English/Spanish)",
+      ],
+      detailedServices: [
+        {
+          name: "Custom Ceremony Design",
+          description: "Personalized ceremonies crafted to reflect your unique love story, values, and relationship, creating an unforgettable experience for you and your guests."
+        },
+        {
+          name: "Flexible Ceremony Styles",
+          description: "Traditional, contemporary, religious, spiritual, or secular ceremonies tailored to your preferences and cultural traditions."
+        },
+        {
+          name: "Vow Assistance",
+          description: "Professional guidance in crafting meaningful personal vows that express your commitment and love in your own words."
+        },
+        {
+          name: "Same-Day Services",
+          description: "Emergency wedding services available with minimal notice for last-minute ceremonies and urgent marriage needs."
+        },
+        {
+          name: "Bilingual Ceremonies",
+          description: "Full wedding ceremony services conducted in English or Spanish, or a blend of both languages for multicultural celebrations."
+        },
       ],
     },
   ]
@@ -359,60 +502,90 @@ function ServicesGrid({ filter }: { filter?: string }) {
   const filteredServices = filter ? services.filter((s) => s.category === filter) : services
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service, index) => (
-            <ServiceCard key={index} service={service} />
-          ))}
+    <>
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {filteredServices.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {!filter && (
+        <section className="py-12 bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+          <div className="container mx-auto px-4 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Languages className="w-8 h-8" />
+              <h2 className="text-2xl md:text-3xl font-heading font-bold">
+                Bilingual Services Available
+              </h2>
+            </div>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-95">
+              All of our notary services are available in both English and Spanish. 
+              Our bilingual notaries provide seamless communication and culturally 
+              sensitive service delivery across every category—from estate planning 
+              (Testamentos, Directivas, Carta de Poder) to real estate transactions, 
+              business documents, and wedding ceremonies.
+            </p>
+            <p className="text-base md:text-lg max-w-2xl mx-auto mt-4 opacity-90">
+              Todos nuestros servicios notariales están disponibles en inglés y español.
+            </p>
+          </div>
+        </section>
+      )}
+    </>
   )
 }
 
 function ServiceCard({ service }: { service: any }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <Card className="flex flex-col h-full">
-      <CardHeader>
-        <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-        {service.customPricing && <p className="text-sm font-medium text-primary mb-2">{service.customPricing}</p>}
-        <CardDescription className="text-sm">{service.description}</CardDescription>
+    <Card className="border-2 border-slate-200/20 h-full flex flex-col">
+      <CardHeader className="flex-shrink-0">
+        <h3 className="font-heading text-lg md:text-xl text-slate-800 mb-2">{service.title}</h3>
+        {service.customPricing && (
+          <div className="text-lg font-semibold text-slate-700 mb-2">{service.customPricing}</div>
+        )}
+        <CardDescription className="text-sm md:text-base">{service.description}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col">
-        <ul className="space-y-2 mb-4 flex-1">
+      
+      <CardContent className="flex-grow flex flex-col">
+        <ul className="space-y-3 mb-4 flex-grow">
           {service.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-sm">
-              <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+              <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
               <span className="text-gray-700">{feature}</span>
             </li>
           ))}
         </ul>
-
-        {service.detailsFeatures && (
-          <Collapsible open={isOpen} onOpenChange={setIsOpen} className="mb-4">
-            <CollapsibleTrigger className="flex items-center gap-2 text-sm text-primary hover:underline">
-              <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-              Show More Details
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-3">
-              <p className="text-sm font-medium mb-2">Documents We Authenticate:</p>
-              <ul className="space-y-2">
-                {service.detailsFeatures.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CollapsibleContent>
-          </Collapsible>
+        
+        <Button 
+          variant="outline" 
+          onClick={() => setIsExpanded(!isExpanded)} 
+          className="w-full mb-4 border-slate-200"
+        >
+          <ChevronDown className={`w-4 h-4 mr-2 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+          {isExpanded ? "Show Less Details" : "Show More Details"}
+        </Button>
+        
+        {isExpanded && service.detailedServices && (
+          <div className="space-y-4 mb-4 p-3 md:p-4 bg-slate-50 rounded-lg">
+            {service.detailedServices.map((detail: any, idx: number) => (
+              <div key={idx} className="border-l-4 border-slate-200 pl-3 md:pl-4">
+                <h5 className="font-medium text-slate-700 mb-1">{detail.name}</h5>
+                <p className="text-xs md:text-sm text-slate-600">{detail.description}</p>
+              </div>
+            ))}
+          </div>
         )}
-
-        <Link href="/schedule">
-          <Button className="w-full">Book {service.title}</Button>
+        
+        <Link href={`/schedule?service=${service.category}`}>
+          <Button className="w-full bg-slate-700 text-white border border-black mt-auto">
+            Book {service.title}
+          </Button>
         </Link>
       </CardContent>
     </Card>
