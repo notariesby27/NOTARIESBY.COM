@@ -1,138 +1,65 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React from "react"
+import { useForm, ValidationError } from "@formspree/react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle, Loader2 } from "lucide-react"
+import { CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [selectedService, setSelectedService] = useState("")
+  const [state, handleSubmit] = useForm("xrbrgjla")
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    const form = e.currentTarget
-    const formData = new FormData(form)
-
-    try {
-      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      })
-
-      if (response.ok) {
-        setIsSubmitted(true)
-        form.reset()
-        setSelectedService("")
-      }
-    } catch (error) {
-      console.error("Form submission error:", error)
-    } finally {
-      setIsSubmitting(false)
-    }
+  if (state.succeeded) {
+    return (
+      <div className="bg-green-50 border-2 border-green-600 rounded-lg p-8 text-center">
+        <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
+        <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
+        <p className="text-gray-700 mb-4">We'll respond within 24 hours.</p>
+        <p className="text-sm text-gray-600">Urgent? Call (727) 710-5455</p>
+      </div>
+    )
   }
 
-  if (isSubmitted) {
+  if (state.errors && state.errors.length > 0) {
     return (
-      <div className="bg-card border border-border p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-accent mx-auto mb-4" />
-        <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
-        <p className="text-muted-foreground mb-6">
-          We've received your message and will get back to you within 24 hours.
-        </p>
-        <Button onClick={() => setIsSubmitted(false)} variant="outline">
-          Send Another Message
-        </Button>
+      <div className="bg-red-50 border-2 border-red-600 rounded-lg p-6">
+        <AlertCircle className="w-6 h-6 text-red-600 mb-2" />
+        <h3 className="font-semibold text-red-900 mb-2">Submission Failed</h3>
+        <p className="text-sm text-red-800">Call us at (727) 710-5455</p>
       </div>
     )
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="firstName">First Name *</Label>
-          <Input id="firstName" name="firstName" required placeholder="John" />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="lastName">Last Name *</Label>
-          <Input id="lastName" name="lastName" required placeholder="Doe" />
-        </div>
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-10000px" }} aria-hidden="true" />
+      
+      <div className="space-y-2">
+        <Label htmlFor="email">Email <span className="text-red-600">*</span></Label>
+        <Input id="email" name="email" type="email" required disabled={state.submitting} className="border-2" />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email Address *</Label>
-        <Input id="email" name="email" type="email" required placeholder="john.doe@example.com" />
+        <Label htmlFor="phone">Phone <span className="text-red-600">*</span></Label>
+        <Input id="phone" name="phone" type="tel" required disabled={state.submitting} className="border-2" />
+        <ValidationError prefix="Phone" field="phone" errors={state.errors} />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="phone">Phone Number *</Label>
-        <Input id="phone" name="phone" type="tel" required placeholder="(555) 123-4567" />
+        <Label htmlFor="message">Message <span className="text-red-600">*</span></Label>
+        <Textarea id="message" name="message" required disabled={state.submitting} rows={6} className="border-2" />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="service">Service Needed *</Label>
-        <Select name="service" value={selectedService} onValueChange={setSelectedService} required>
-          <SelectTrigger id="service">
-            <SelectValue placeholder="Select a service" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="general-notarization">General Notarization</SelectItem>
-            <SelectItem value="real-estate">Real Estate Services</SelectItem>
-            <SelectItem value="apostille">Apostille Services</SelectItem>
-            <SelectItem value="business-documents">Business Documents</SelectItem>
-            <SelectItem value="vehicle-documents">Vehicle Documents</SelectItem>
-            <SelectItem value="mobile-notary">Mobile Notary</SelectItem>
-            <SelectItem value="estate-planning">Estate Planning</SelectItem>
-            <SelectItem value="legal-documents">Legal Documents</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+      <input type="hidden" name="_subject" value="NotariesBy Contact" />
+      <input type="hidden" name="_cc" value="info@notariesby.com" />
 
-      <div className="space-y-2">
-        <Label htmlFor="preferredDate">Preferred Date</Label>
-        <Input id="preferredDate" name="preferredDate" type="date" />
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="message">Message *</Label>
-        <Textarea
-          id="message"
-          name="message"
-          required
-          placeholder="Please provide details about your notarization needs..."
-          rows={6}
-        />
-      </div>
-
-      <Button type="submit" disabled={isSubmitting} className="w-full bg-primary text-primary-foreground">
-        {isSubmitting ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Sending...
-          </>
-        ) : (
-          "Send Message"
-        )}
+      <Button type="submit" disabled={state.submitting} className="w-full bg-gray-900 text-white py-3">
+        {state.submitting ? (<><Loader2 className="mr-2 h-5 w-5 animate-spin" />Sending...</>) : "Send Message"}
       </Button>
-
-      <p className="text-xs text-muted-foreground text-center">
-        By submitting this form, you agree to our privacy policy and terms of service.
-      </p>
     </form>
   )
 }
