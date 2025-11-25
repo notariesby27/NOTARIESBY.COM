@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import Image from "next/image"
 import { Address } from "@/components/address"
 
@@ -77,10 +77,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8 h-[300px] bg-muted border border-border overflow-hidden flex items-center justify-center">
-                <p className="text-gray-500 text-sm">Map image will be added here</p>
               </div>
             </div>
 

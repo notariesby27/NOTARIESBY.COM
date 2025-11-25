@@ -6,8 +6,21 @@ import { Hero } from "@/components/hero"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
-import { Check, ChevronDown, FileText, Home, ScrollText, Globe, Car, Briefcase, Languages, Heart, Clock, MapPin, DollarSign } from 'lucide-react'
+import {
+  Check,
+  ChevronDown,
+  FileText,
+  Home,
+  ScrollText,
+  Globe,
+  Car,
+  Briefcase,
+  Languages,
+  Heart,
+  Clock,
+  MapPin,
+  DollarSign,
+} from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -20,7 +33,7 @@ export default function ServicesPage() {
       <Hero
         title="Professional Notary Services"
         subtitle="Trusted & Reliable — Mobile service across all 67 Florida counties. Book in minutes."
-        ctaPrimary={{ href: "/schedule", label: "Book Now" }}
+        ctaPrimary={{ href: "/schedule#booking-form", label: "Book Now" }}
         ctaSecondary={{ href: "/contact", label: "Contact Us" }}
       />
 
@@ -245,7 +258,7 @@ export default function ServicesPage() {
             Book an appointment today and experience our professional, convenient mobile notary services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/schedule">
+            <Link href="/schedule#booking-form">
               <Button size="lg" className="min-w-[200px]">
                 Book an Appointment
               </Button>
@@ -303,23 +316,27 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "General Document Notarization",
-          description: "Professional notarization of legal documents, contracts, affidavits, and personal papers with proper identification verification and record keeping."
+          description:
+            "Professional notarization of legal documents, contracts, affidavits, and personal papers with proper identification verification and record keeping.",
         },
         {
           name: "Mobile Notary Services",
-          description: "On-site notarization services available throughout all 67 Florida counties for your convenience at home, office, or any location."
+          description:
+            "On-site notarization services available throughout all 67 Florida counties for your convenience at home, office, or any location.",
         },
         {
           name: "Witness Services",
-          description: "Qualified witnesses provided when required by law for document execution and notarization."
+          description: "Qualified witnesses provided when required by law for document execution and notarization.",
         },
         {
           name: "Extended Hours Service",
-          description: "After-hours and weekend notary services available with convenience fee for urgent document needs."
+          description:
+            "After-hours and weekend notary services available with convenience fee for urgent document needs.",
         },
         {
           name: "Apostille Services",
-          description: "Complete apostille processing through the US State Department for international document authentication and legalization."
+          description:
+            "Complete apostille processing through the US State Department for international document authentication and legalization.",
         },
       ],
     },
@@ -337,19 +354,23 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "Purchase Agreements",
-          description: "Complete notarization of home purchase contracts, ensuring all signatures and documents meet legal requirements for real estate transactions."
+          description:
+            "Complete notarization of home purchase contracts, ensuring all signatures and documents meet legal requirements for real estate transactions.",
         },
         {
           name: "Refinancing Documents",
-          description: "Professional handling of mortgage refinancing paperwork with attention to detail and timely completion for smooth closing processes."
+          description:
+            "Professional handling of mortgage refinancing paperwork with attention to detail and timely completion for smooth closing processes.",
         },
         {
           name: "Seller Document Packages",
-          description: "Comprehensive notarization of all seller-required documents including deeds, affidavits, and disclosure forms."
+          description:
+            "Comprehensive notarization of all seller-required documents including deeds, affidavits, and disclosure forms.",
         },
         {
           name: "Closing Services",
-          description: "Full-service loan signing agent certified by NNA and LSS, providing complete closing services for buyers, sellers, and lenders."
+          description:
+            "Full-service loan signing agent certified by NNA and LSS, providing complete closing services for buyers, sellers, and lenders.",
         },
       ],
     },
@@ -368,19 +389,23 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "Last Will and Testament",
-          description: "Comprehensive will preparation and notarization to ensure your assets are distributed according to your wishes with proper legal documentation."
+          description:
+            "Comprehensive will preparation and notarization to ensure your assets are distributed according to your wishes with proper legal documentation.",
         },
         {
           name: "Healthcare Directives",
-          description: "Living wills and advance healthcare directives that document your medical care preferences and end-of-life decisions."
+          description:
+            "Living wills and advance healthcare directives that document your medical care preferences and end-of-life decisions.",
         },
         {
           name: "Power of Attorney Documents",
-          description: "Durable and limited power of attorney for financial, legal, and healthcare decisions, allowing trusted individuals to act on your behalf."
+          description:
+            "Durable and limited power of attorney for financial, legal, and healthcare decisions, allowing trusted individuals to act on your behalf.",
         },
         {
           name: "Spanish Estate Services",
-          description: "Complete estate planning services in Spanish including Testamentos, Directivas, and Carta de Poder for Spanish-speaking clients."
+          description:
+            "Complete estate planning services in Spanish including Testamentos, Directivas, and Carta de Poder for Spanish-speaking clients.",
         },
       ],
     },
@@ -399,19 +424,23 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "Birth Certificate Apostilles",
-          description: "Authentication of birth certificates for dual citizenship applications, overseas employment, international adoptions, and immigration processes."
+          description:
+            "Authentication of birth certificates for dual citizenship applications, overseas employment, international adoptions, and immigration processes.",
         },
         {
           name: "Marriage License Apostilles",
-          description: "International recognition of marriage licenses for legal proceedings abroad, immigration applications, and establishing marital status overseas."
+          description:
+            "International recognition of marriage licenses for legal proceedings abroad, immigration applications, and establishing marital status overseas.",
         },
         {
           name: "Educational Document Apostilles",
-          description: "Apostille services for diplomas, transcripts, and degrees for international study programs, overseas employment, and professional licensing."
+          description:
+            "Apostille services for diplomas, transcripts, and degrees for international study programs, overseas employment, and professional licensing.",
         },
         {
           name: "Business Document Apostilles",
-          description: "Authentication of corporate documents, articles of incorporation, certificates of good standing, and business licenses for international operations."
+          description:
+            "Authentication of corporate documents, articles of incorporation, certificates of good standing, and business licenses for international operations.",
         },
       ],
     },
@@ -429,15 +458,18 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "VIN Verification Services",
-          description: "Official vehicle identification number verification for title transfers, registration, and legal documentation requirements."
+          description:
+            "Official vehicle identification number verification for title transfers, registration, and legal documentation requirements.",
         },
         {
           name: "Odometer Certification",
-          description: "Legal odometer reading verification and certification for vehicle sales, title transfers, and state registration compliance."
+          description:
+            "Legal odometer reading verification and certification for vehicle sales, title transfers, and state registration compliance.",
         },
         {
           name: "Registration Assistance",
-          description: "Complete assistance with out-of-state vehicle registration including all required documentation, verification, and notarization services."
+          description:
+            "Complete assistance with out-of-state vehicle registration including all required documentation, verification, and notarization services.",
         },
       ],
     },
@@ -453,11 +485,13 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "I-9 Employment Verification",
-          description: "Complete I-9 form verification services ensuring federal compliance with employment eligibility requirements and proper documentation for new hires."
+          description:
+            "Complete I-9 form verification services ensuring federal compliance with employment eligibility requirements and proper documentation for new hires.",
         },
         {
           name: "Remote Employee Verification",
-          description: "Authorized representative services for verifying identity and employment documents for remote employees, ensuring compliance across all locations."
+          description:
+            "Authorized representative services for verifying identity and employment documents for remote employees, ensuring compliance across all locations.",
         },
       ],
     },
@@ -477,23 +511,28 @@ function ServicesGrid({ filter }: { filter?: string }) {
       detailedServices: [
         {
           name: "Custom Ceremony Design",
-          description: "Personalized ceremonies crafted to reflect your unique love story, values, and relationship, creating an unforgettable experience for you and your guests."
+          description:
+            "Personalized ceremonies crafted to reflect your unique love story, values, and relationship, creating an unforgettable experience for you and your guests.",
         },
         {
           name: "Flexible Ceremony Styles",
-          description: "Traditional, contemporary, religious, spiritual, or secular ceremonies tailored to your preferences and cultural traditions."
+          description:
+            "Traditional, contemporary, religious, spiritual, or secular ceremonies tailored to your preferences and cultural traditions.",
         },
         {
           name: "Vow Assistance",
-          description: "Professional guidance in crafting meaningful personal vows that express your commitment and love in your own words."
+          description:
+            "Professional guidance in crafting meaningful personal vows that express your commitment and love in your own words.",
         },
         {
           name: "Same-Day Services",
-          description: "Emergency wedding services available with minimal notice for last-minute ceremonies and urgent marriage needs."
+          description:
+            "Emergency wedding services available with minimal notice for last-minute ceremonies and urgent marriage needs.",
         },
         {
           name: "Bilingual Ceremonies",
-          description: "Full wedding ceremony services conducted in English or Spanish, or a blend of both languages for multicultural celebrations."
+          description:
+            "Full wedding ceremony services conducted in English or Spanish, or a blend of both languages for multicultural celebrations.",
         },
       ],
     },
@@ -518,16 +557,13 @@ function ServicesGrid({ filter }: { filter?: string }) {
           <div className="container mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Languages className="w-8 h-8" />
-              <h2 className="text-2xl md:text-3xl font-heading font-bold">
-                Bilingual Services Available
-              </h2>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold">Bilingual Services Available</h2>
             </div>
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-95">
-              All of our notary services are available in both English and Spanish. 
-              Our bilingual notaries provide seamless communication and culturally 
-              sensitive service delivery across every category—from estate planning 
-              (Testamentos, Directivas, Carta de Poder) to real estate transactions, 
-              business documents, and wedding ceremonies.
+              All of our notary services are available in both English and Spanish. Our bilingual notaries provide
+              seamless communication and culturally sensitive service delivery across every category—from estate
+              planning (Testamentos, Directivas, Carta de Poder) to real estate transactions, business documents, and
+              wedding ceremonies.
             </p>
             <p className="text-base md:text-lg max-w-2xl mx-auto mt-4 opacity-90">
               Todos nuestros servicios notariales están disponibles en inglés y español.
@@ -551,7 +587,7 @@ function ServiceCard({ service }: { service: any }) {
         )}
         <CardDescription className="text-sm md:text-base">{service.description}</CardDescription>
       </CardHeader>
-      
+
       <CardContent className="flex-grow flex flex-col">
         <ul className="space-y-3 mb-4 flex-grow">
           {service.features.map((feature: string, idx: number) => (
@@ -561,16 +597,12 @@ function ServiceCard({ service }: { service: any }) {
             </li>
           ))}
         </ul>
-        
-        <Button 
-          variant="outline" 
-          onClick={() => setIsExpanded(!isExpanded)} 
-          className="w-full mb-4 border-slate-200"
-        >
+
+        <Button variant="outline" onClick={() => setIsExpanded(!isExpanded)} className="w-full mb-4 border-slate-200">
           <ChevronDown className={`w-4 h-4 mr-2 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
           {isExpanded ? "Show Less Details" : "Show More Details"}
         </Button>
-        
+
         {isExpanded && service.detailedServices && (
           <div className="space-y-4 mb-4 p-3 md:p-4 bg-slate-50 rounded-lg">
             {service.detailedServices.map((detail: any, idx: number) => (
@@ -581,11 +613,9 @@ function ServiceCard({ service }: { service: any }) {
             ))}
           </div>
         )}
-        
-        <Link href={`/schedule?service=${service.category}`}>
-          <Button className="w-full bg-slate-700 text-white border border-black mt-auto">
-            Book {service.title}
-          </Button>
+
+        <Link href={`/schedule?service=${service.category}#booking-form`}>
+          <Button className="w-full bg-slate-700 text-white border border-black mt-auto">Book {service.title}</Button>
         </Link>
       </CardContent>
     </Card>

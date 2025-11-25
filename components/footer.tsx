@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react'
+import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react"
 import { Address } from "./address"
 
 export function Footer() {
@@ -103,11 +103,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <p className="text-sm text-white/60">
-                © {new Date().getFullYear()} West Coast Notaries, LLC d/b/a NotariesBy. All rights reserved.
+                © {new Date().getFullYear()} West Coast Notaries, LLC. All rights reserved.
               </p>
-              <p className="text-xs text-white/50 mt-1">
-                Notaries By Name is a registered fictitious name of West Coast Notaries LLC
-              </p>
+              <p className="text-xs text-white/50 mt-1">NotariesBy is a fictitious name of West Coast Notaries, LLC.</p>
             </div>
             <div className="flex gap-6">
               <Link href="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">

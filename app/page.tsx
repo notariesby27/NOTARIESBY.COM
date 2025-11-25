@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -10,6 +12,7 @@ import { ImageCarousel } from "@/components/image-carousel"
 import Image from "next/image"
 import { RevealSection } from "@/components/reveal-section"
 import ProfessionalCredentials from "@/components/professional-credentials"
+import { ParallaxSection } from "@/components/parallax-section"
 
 export default function HomePage() {
   const testimonials = [
@@ -159,23 +162,14 @@ export default function HomePage() {
 
       <Separator className="my-0" />
 
-      <RevealSection
-        as="section"
-        direction="left"
-        className="py-16 md:py-20 lg:py-24 bg-[#1F2238] text-white relative overflow-hidden"
+      <ParallaxSection
+        imageSrc="/images/expert-notary-services-gradient-bg.jpg"
+        speed={0.7}
+        overlay={true}
+        overlayOpacity={0.3}
+        className="py-16 md:py-20 lg:py-24 text-white"
       >
-        <div className="absolute inset-0">
-          <Image src="/images/expert-notary-services-gradient-bg.jpg" alt="" fill className="object-cover opacity-80" />
-        </div>
-        <div className="absolute inset-0 opacity-8">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px)`,
-            }}
-          />
-        </div>
-        <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-8">
+        <div className="container mx-auto px-6 md:px-8 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4">
               Expert Notary Services for Your Most Important Transactions
@@ -195,7 +189,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </RevealSection>
+      </ParallaxSection>
 
       <RevealSection as="section" direction="right" className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-6 md:px-8 lg:px-8">
@@ -250,15 +244,15 @@ export default function HomePage() {
 
       <RevealSection as="section" direction="left" className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-6 md:px-8 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {/* Document Services */}
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow flex flex-col h-full min-h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Document Services</CardTitle>
                 <CardDescription>Professional notarization and apostille services</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
+              <CardContent className="flex-grow">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm">General document notarization</span>
@@ -285,8 +279,8 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
-                <Link href="/services" className="w-full">
+              <CardFooter className="mt-auto pt-6">
+                <Link href="/schedule?service=document" className="w-full">
                   <Button variant="dark" className="w-full">
                     Book Document Services
                   </Button>
@@ -295,13 +289,13 @@ export default function HomePage() {
             </Card>
 
             {/* Real Estate Services */}
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow flex flex-col h-full min-h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Real Estate Services</CardTitle>
                 <CardDescription>Expert notarization for real estate transactions</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
+              <CardContent className="flex-grow">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm">Real estate document notarization and preparation</span>
@@ -320,8 +314,8 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
-                <Link href="/services" className="w-full">
+              <CardFooter className="mt-auto pt-6">
+                <Link href="/schedule?service=real-estate" className="w-full">
                   <Button variant="dark" className="w-full">
                     Book Real Estate Services
                   </Button>
@@ -330,13 +324,13 @@ export default function HomePage() {
             </Card>
 
             {/* Estate Planning */}
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow flex flex-col h-full min-h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Estate Planning</CardTitle>
                 <CardDescription>Secure your legacy with proper documentation</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
+              <CardContent className="flex-grow">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" />
                     <span className="text-sm">Last Will and Testament</span>
@@ -359,8 +353,8 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
-                <Link href="/services" className="w-full">
+              <CardFooter className="mt-auto pt-6">
+                <Link href="/schedule?service=estate-planning" className="w-full">
                   <Button variant="dark" className="w-full">
                     Book Estate Planning
                   </Button>
@@ -411,7 +405,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 pl-16">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-gray-800">Birth certificates</span>
@@ -470,21 +464,13 @@ export default function HomePage() {
 
       <Separator className="my-0" />
 
-      {/* Elegant Wedding Officiant Services - DARK (Shark) with texture */}
+      {/* Elegant Wedding Officiant Services - DARK (Shark) */}
       <RevealSection
         as="section"
         direction="left"
         className="py-12 md:py-16 lg:py-20 bg-[#2C3036] text-white relative overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-8">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px)`,
-            }}
-          />
-        </div>
-        <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-8">
+        <div className="container mx-auto px-6 md:px-8 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light mb-4">
               Elegant Wedding Officiant Services
