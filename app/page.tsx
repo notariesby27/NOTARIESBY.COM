@@ -13,6 +13,7 @@ import Image from "next/image"
 import { RevealSection } from "@/components/reveal-section"
 import ProfessionalCredentials from "@/components/professional-credentials"
 import { ParallaxSection } from "@/components/parallax-section"
+import NotariesBySignature from "@/app/components/NotariesBySignature/NotariesBySignature"
 
 export default function HomePage() {
   const testimonials = [
@@ -102,6 +103,7 @@ export default function HomePage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light mb-3 md:mb-5 text-balance leading-tight text-black">
             Reliable Mobile Notary Services—On Time, On Your Terms
           </h1>
+          <NotariesBySignature />
           <p className="text-base md:text-lg lg:text-xl text-black/80 mb-4 md:mb-6 max-w-2xl mx-auto leading-relaxed">
             Certified, insured, and ready to help with real estate closings, affidavits, and general notarizations
             across the West Coast.
