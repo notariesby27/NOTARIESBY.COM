@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Markmap</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    #mindmap { height: 100vh; width: 100vw; }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/style.css">
+</head>
+<body>
+  <svg id="mindmap"></svg>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.3/dist/browser/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/index.js"></script>
+  <script>
+    (async () => {
+      const { markmap } = window;
+      const { Markmap, loadCSS, loadJS } = markmap;
+      const { toolbar } = window.markmap;
+      const svg = document.querySelector('#mindmap');
+      const mm = Markmap.create(svg);
+      const data = {"content":"<pre data-lines=\"2,16\"><code class=\"language-markdown\"><span class=\"hljs-section\"># 📚 Introduction to Mind Mapping</span>\n<span class=\"hljs-section\">## 🎯 The Benefits of Mind Mapping</span>\n<span class=\"hljs-section\">### Understanding Your Thoughts</span>\n<span class=\"hljs-bullet\">-</span> Clarify your ideas\n<span class=\"hljs-bullet\">-</span> Enhance creativity\n\n<span class=\"hljs-section\">## 💡 Key Concepts in Mind Mapping</span>\n<span class=\"hljs-section\">### Structuring Information</span>\n<span class=\"hljs-bullet\">-</span> Identify the main topic\n<span class=\"hljs-bullet\">-</span> Create a hierarchical structure\n<span class=\"hljs-bullet\">*</span> Use headings (#, ##, ###)\n<span class=\"hljs-bullet\">*</span> Bullet points (-) for details\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"2,16"}};
+      mm.setData(data);
+      toolbar.create(mm);
+    })();
+  </script>
+</body>
+</html>

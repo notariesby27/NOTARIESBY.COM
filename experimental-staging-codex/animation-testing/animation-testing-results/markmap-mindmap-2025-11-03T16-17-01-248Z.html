@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Markmap</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    #mindmap { height: 100vh; width: 100vw; }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/style.css">
+</head>
+<body>
+  <svg id="mindmap"></svg>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.3/dist/browser/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.3/dist/index.js"></script>
+  <script>
+    (async () => {
+      const { markmap } = window;
+      const { Markmap, loadCSS, loadJS } = markmap;
+      const { toolbar } = window.markmap;
+      const svg = document.querySelector('#mindmap');
+      const mm = Markmap.create(svg);
+      const data = {"content":"","children":[{"content":"Overview of Image Source","children":[{"content":"Description: A high-resolution image with an ISO 1024x768 dimensions","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Date taken: November 12, 2023","children":[],"payload":{"tag":"li","lines":"4,6"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"Metadata and Rights","children":[{"content":"File name: Image (2142x756).png","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"Date created: November 12, 2023","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"License: Copyright by Wikimedia Commons https://commons.wikimedia.org/wiki/File:Image_(2142x756).png","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Usage rights: Shareable with proper attribution","children":[],"payload":{"tag":"li","lines":"10,12"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Additional Images","children":[{"content":"<pre data-lines=\"17,33\"><code class=\"language-markdown\">🎯 <span class=\"hljs-strong\">**Overview of Image Source**</span> 📸\n  ## <span class=\"hljs-strong\">**Description**</span>\n<span class=\"hljs-bullet\">    -</span> A high-resolution image with an ISO 1024x768 dimensions\n<span class=\"hljs-bullet\">    -</span> November 12, 2023\n  ## <span class=\"hljs-strong\">**Metadata and Rights**</span>\n<span class=\"hljs-bullet\">    -</span> File name: Image (2142x756).png\n<span class=\"hljs-bullet\">    -</span> Date created: November 12, 2023\n<span class=\"hljs-bullet\">    -</span> License: Copyright by Wikimedia Commons https://commons.wikimedia.org/wiki/File:Image<span class=\"hljs-emphasis\">_(2142x756).png\n    - Usage rights: Shareable with proper attribution\n\n📊 <span class=\"hljs-strong\">**Additional Images**</span>\n  ## <span class=\"hljs-strong\">**Source**</span>\n    [<span class=\"hljs-string\">Wikipedia.org</span>](<span class=\"hljs-link\">https://en.wikipedia.org/wiki/Image:Image_(2142x756</span>).png)\n    https://commons.wikimedia.org/wiki/File:Image_</span>(2142x756).png\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"17,33"}}],"payload":{"tag":"h2","lines":"12,13"}}]};
+      mm.setData(data);
+      toolbar.create(mm);
+    })();
+  </script>
+</body>
+</html>
